@@ -22,12 +22,7 @@ const routes: Routes = [
     path: 'sugerencias',
     component: SugerenciasComponent,
   },
-
-  {
-    path: 'menu',
-    component: MenuComponent,
-  },
-
+  
   {
     path: '**',
     redirectTo: 'inicio',
