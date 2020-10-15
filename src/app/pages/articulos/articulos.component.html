@@ -1,0 +1,27 @@
+<h6>Este es el componente artículos</h6>
+
+<table mdbTable class="table">
+    <thead>
+        <tr>
+            <th>ARTÍCULO</th>
+            <th>TALLA</th>
+            <th>PRECIO</th>
+            <th>BOTÓN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr mdbTableCol *ngFor="let a of articulos">
+            <td>{{a.nombre}}</td>
+            <td>{{a.talla}}</td>
+            <ng-template *ngIf="b;then this_content;else other_content"></ng-template>
+            <ng-template #this_content>
+                <td>{{a.texto[0][0]}}</td>
+                <button class="btn btn-info" (click)="mostrarPrecio()">{{a.texto[0][1]}}</button>
+            </ng-template>
+            <ng-template #other_content>
+                <td>{{a.texto[1][0]}}</td>
+                <button class="btn btn-info" (click)="ocultarPrecio()">{{a.texto[1][1]}}</button>
+            </ng-template>
+        </tr>
+    </tbody>
+</table>
