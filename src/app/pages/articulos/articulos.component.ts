@@ -58,4 +58,5 @@ export class ArticulosComponent implements OnInit {
   ocultarPrecio() {
     this.b = true;
   }
+  
 }

@@ -1,1 +1,11 @@
 <p>Este es el componente noticias</p>
+
+<div class="container" *ngFor="let n of noticias">
+    <div>
+        <h1>{{n.title}}</h1>
+        <p>{{n.author}}</p>
+        <img url="{{n.urlToImage">
+        <p>{{n.content}}</p>
+        <p>{{n.url}}</p>
+    </div>
+</div>
