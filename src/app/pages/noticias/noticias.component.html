@@ -1,11 +1,19 @@
 <p>Este es el componente noticias</p>
 
-<div class="container" *ngFor="let n of noticias">
-    <div>
-        <h1>{{n.title}}</h1>
-        <p>{{n.author}}</p>
-        <img url="{{n.urlToImage">
-        <p>{{n.content}}</p>
-        <p>{{n.url}}</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 p-5" *ngFor="let n of noticias">
+            <h2 class="" *ngIf="n.title">{{n.title}}</h2>
+            <h2 *ngIf="!n.title">Titulo no disponible</h2>
+            <small *ngIf="n.description">{{n.description}}</small>
+            <small *ngIf="!n.description">Descripción no disponible</small>
+            <h6 *ngIf="n.author">{{n.author}}</h6>
+            <h6 *ngIf="!n.author">Autor no disponible</h6>
+            <p *ngIf="n.content">{{n.content}}</p>
+            <p *ngIf="!n.content">Contenido no disponible</p>
+            <a *ngIf="n.url" href="{{n.url}}">Más</a>
+            <a *ngIf="!n.url" href="#"></a>
+        </div>
     </div>
 </div>
+

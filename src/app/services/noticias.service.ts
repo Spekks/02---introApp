@@ -12,7 +12,7 @@ export class NoticiasService {
 
   getNoticias() {
     return new Promise<RespuestaNoticias>(resolve=>{
-      this._http.get<RespuestaNoticias>(`${environment.apiUrl}?q=bitcoin&from=2020-09-18&sortBy=publishedAt&apiKey=${environment.apiKey}`).subscribe(resp=>{
+      this._http.get<RespuestaNoticias>(`${environment.apiUrl}?q=bitcoin&sortBy=publishedAt&apiKey=${environment.apiKey}`).subscribe(resp=>{
         resolve(resp);
       })
     })

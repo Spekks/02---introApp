@@ -16,6 +16,7 @@ export class NoticiasComponent implements OnInit {
   async ngOnInit() {
     const not = await this._noticiasService.getNoticias();
     this.noticias = not.articles;
+    console.log(this.noticias);
   }
 
 }
