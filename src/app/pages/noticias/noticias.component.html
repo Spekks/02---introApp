@@ -1,18 +1,21 @@
-<p>Este es el componente noticias</p>
-
+<div class="container">
+    <h2 class="p-4 text-center">Este es el componente noticias</h2>
+    <hr>
+</div>
 <div class="container">
     <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-4 p-5" *ngFor="let n of noticias">
+        <div class="col-sm-12 col-md-6 col-lg-6 p-5 text-justify" *ngFor="let n of noticias">
             <h2 class="" *ngIf="n.title">{{n.title}}</h2>
-            <h2 *ngIf="!n.title">Titulo no disponible</h2>
-            <small *ngIf="n.description">{{n.description}}</small>
-            <small *ngIf="!n.description">Descripción no disponible</small>
-            <h6 *ngIf="n.author">{{n.author}}</h6>
-            <h6 *ngIf="!n.author">Autor no disponible</h6>
-            <p *ngIf="n.content">{{n.content}}</p>
-            <p *ngIf="!n.content">Contenido no disponible</p>
-            <a *ngIf="n.url" href="{{n.url}}">Más</a>
-            <a *ngIf="!n.url" href="#"></a>
+            <h2 class="" *ngIf="!n.title">Titulo no disponible</h2>
+            <small class="font-italic" *ngIf="n.description">{{n.description}}</small>
+            <small class="font-italic" *ngIf="!n.description"></small>
+            <hr>
+            <h6 class="" *ngIf="n.author">{{n.author}}</h6>
+            <h6 class="" *ngIf="!n.author"></h6>
+            <p class="mt-4" *ngIf="n.content">{{n.content}}</p>
+            <p class="mt-4" *ngIf="!n.content">Contenido no disponible</p>
+            <a class="" *ngIf="n.url" href="{{n.url}}">Más</a>
+            <a class="" *ngIf="!n.url" href="#"></a>
         </div>
     </div>
 </div>

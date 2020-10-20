@@ -7,40 +7,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticulosComponent implements OnInit {
 
-  public b:boolean;
-
   public articulos:any = [
     {
+      id: 0,
       nombre: "camiseta",
       talla: "L",
       texto: [
         [15.55, "ocultar precio"],
         ["---", "mostrar precio"]
-      ]
+      ],
+      check: true
     },
     {
+      id: 1,
       nombre: "pantalón",
       talla: "XL",
       texto: [
         [20.95, "ocultar precio"],
         ["---", "mostrar precio"]
-      ]
+      ],
+      check: true
     },
     {
+      id: 2,
       nombre: "chaqueta",
       talla: "M",
       texto: [
         [45.99, "ocultar precio"],
         ["---", "mostrar precio"]
-      ]
+      ],
+      check: true
     },
     {
+      id: 3,
       nombre: "Abrigo",
       talla: "L",
       texto: [
         [89.99, "ocultar precio"],
         ["---", "mostrar precio"]
-      ]
+      ],
+      check: true
     },
   ];
 
@@ -48,15 +54,14 @@ export class ArticulosComponent implements OnInit {
 
   ngOnInit(): void {
     this.articulos;
-    this.b;
+  }
+  
+  mostrarPrecio(id:number) {
+    this.articulos[id].check = false;
   }
 
-  mostrarPrecio() {
-    this.b = false;
-  }
-
-  ocultarPrecio() {
-    this.b = true;
+  ocultarPrecio(id:number) {
+    this.articulos[id].check = true;
   }
   
 }
