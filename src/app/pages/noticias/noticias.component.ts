@@ -10,13 +10,16 @@ import { NoticiasService } from 'src/app/services/noticias.service';
 export class NoticiasComponent implements OnInit {
 
   public noticias:Article[] = [];
+  public head:string;
 
   constructor(private _noticiasService:NoticiasService) { }
 
   async ngOnInit() {
     const not = await this._noticiasService.getNoticias();
     this.noticias = not.articles;
-    console.log(this.noticias);
   }
 
+  guardaTitular(titular:string) {
+    this.head = titular;
+  }
 }

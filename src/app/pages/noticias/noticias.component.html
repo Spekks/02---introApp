@@ -3,20 +3,13 @@
     <hr>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-6 p-5 text-justify" *ngFor="let n of noticias">
-            <h2 class="" *ngIf="n.title">{{n.title}}</h2>
-            <h2 class="" *ngIf="!n.title">Titulo no disponible</h2>
-            <small class="font-italic" *ngIf="n.description">{{n.description}}</small>
-            <small class="font-italic" *ngIf="!n.description"></small>
-            <hr>
-            <h6 class="" *ngIf="n.author">{{n.author}}</h6>
-            <h6 class="" *ngIf="!n.author"></h6>
-            <p class="mt-4" *ngIf="n.content">{{n.content}}</p>
-            <p class="mt-4" *ngIf="!n.content">Contenido no disponible</p>
-            <a class="" *ngIf="n.url" href="{{n.url}}">Más</a>
-            <a class="" *ngIf="!n.url" href="#"></a>
-        </div>
-    </div>
+    <app-ultima-noticia-guardada
+        [cabecera] = "head">
+    </app-ultima-noticia-guardada>
+
+    <app-noticia *ngFor="let n of noticias"
+        [noticia] = "n"
+        (cabeceraEvento) = "guardaTitular($event)">
+    </app-noticia>
 </div>
 

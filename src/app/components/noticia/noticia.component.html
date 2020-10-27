@@ -1,0 +1,18 @@
+<div class="card m-4">
+    <img class="card-img-top" *ngIf="noticia.urlToImage" src="{{noticia.urlToImage}}">
+    <div class="card-body">
+        <h2 class="card-title" *ngIf="noticia.title">{{noticia.title}}</h2>
+        <h2 class="card-title" *ngIf="!noticia.title">Titulo no disponible</h2>
+        <small class="font-italic" *ngIf="noticia.description">{{noticia.description}}</small>
+        <small class="font-italic" *ngIf="!noticia.description"></small>
+        <hr>
+        <h6 class="" *ngIf="noticia.author">{{noticia.author}}</h6>
+        <h6 class="" *ngIf="!noticia.author"></h6>
+        <p class="card-text mt-4" *ngIf="noticia.content">{{noticia.content}}</p>
+        <p class="card-text mt-4" *ngIf="!noticia.content">Contenido no disponible</p>
+        <a class="" *ngIf="noticia.url" href="{{noticia.url}}">Más</a>
+    </div>
+    <div class="card-footer d-flex justify-content-end">
+        <button class="btn btn-primary m-3" (click)="guardarHeader(noticia.title)">Guardar cabecera</button>
+    </div>
+</div>
